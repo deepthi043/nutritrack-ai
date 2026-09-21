@@ -1,0 +1,9 @@
+{
+  "name": "nutritrack-step-sensor",
+  "version": "1.0.0",
+  "description": "Local Expo Module: reads the Android hardware step-counter sensor (TYPE_STEP_COUNTER) via a foreground service, so NutriTrack's own primary Android activity source never depends on Health Connect / Google Fit / Samsung Health.",
+  "main": "index.ts",
+  "platforms": ["android"],
+  "license": "UNLICENSED",
+  "private": true
+}

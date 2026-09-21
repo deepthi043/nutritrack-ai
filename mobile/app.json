@@ -1,0 +1,83 @@
+{
+  "expo": {
+    "name": "NutriTrack AI",
+    "slug": "nutritrack-ai-mobile",
+    "scheme": "nutritrackai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "ai.nutritrack.mobile",
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "NutriTrack AI reads your daily step count, walking/running distance, and active energy from Health so it can track your activity progress. This data is only ever displayed in the app and synced to your own NutriTrack AI account.",
+        "NSHealthUpdateUsageDescription": "NutriTrack AI does not write data to Health."
+      }
+    },
+    "android": {
+      "package": "ai.nutritrack.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.ACTIVITY_RECOGNITION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_HEALTH",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_DISTANCE",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.READ_EXERCISE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-dev-client",
+      [
+        "react-native-health-connect",
+        {
+          "healthPermissions": {
+            "read": [
+              "Steps",
+              "Distance",
+              "ActiveCaloriesBurned",
+              "ExerciseSession"
+            ],
+            "write": []
+          }
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#0ea5e9"
+        }
+      ]
+    ],
+    "extra": {
+      "apiBaseUrl": "http://192.168.29.173:8010",
+      "eas": {
+        "projectId": "6a845bdd-39ea-49f8-9055-a31b06088c59"
+      }
+    },
+    "owner": "deepthi-123"
+  }
+}
